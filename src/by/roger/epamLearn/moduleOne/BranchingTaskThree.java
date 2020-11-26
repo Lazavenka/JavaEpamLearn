@@ -1,7 +1,5 @@
 package by.roger.epamLearn.moduleOne;
 
-import com.epam.learn.Dot;
-
 import java.util.Scanner;
 
 /*
