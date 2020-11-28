@@ -27,6 +27,14 @@ public class RandomArrays {
         }
         return array;
     }
+    // Возвращает одномерный массив случайных чисел размерностью size с диапазоном чисел -border ... border
+    public static int[] oneDimArrayRandomFillingNeg(int size,int border) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = (int) ((Math.random() -0.5) * 2*border);
+        }
+        return array;
+    }
 
     public static double[] arrayFibonacci(int size) {
         double[] array = new double[size];
@@ -73,10 +81,10 @@ public class RandomArrays {
 
     //Вывод матрицы матрицей
     public static void printMatrix(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + "\t");
-                if (j == array[i].length - 1) {
+        for (int[] ints : array) {
+            for (int j = 0; j < ints.length; j++) {
+                System.out.print(ints[j] + "\t");
+                if (j == ints.length - 1) {
                     System.out.print("\n");
                 }
             }
@@ -84,11 +92,11 @@ public class RandomArrays {
     }
     //Вывод матрицы чисел с плавающей запятой с форматом
     public static void printMatrix(double[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.format("%.3f", array[i][j]);
+        for (double[] doubles : array) {
+            for (int j = 0; j < doubles.length; j++) {
+                System.out.format("%.3f", doubles[j]);
                 System.out.print("\t");
-                if (j == array[i].length - 1) {
+                if (j == doubles.length - 1) {
                     System.out.print("\n");
                 }
             }
