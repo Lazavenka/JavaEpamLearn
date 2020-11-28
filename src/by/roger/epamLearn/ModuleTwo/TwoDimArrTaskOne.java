@@ -41,10 +41,10 @@ public class TwoDimArrTaskOne {
         int[][] array;
         switch (choose){
             case 1:
-                array = CustomArrays.twoDimArrayRndFill(m, n);
+                array = CustomArrays.twoDimArrayRndFill(n, m);
                 break;
             case 2:
-                array = CustomArrays.inputTwoDimMatrix(m, n, in);
+                array = CustomArrays.inputTwoDimMatrix(n, m, in);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);

@@ -117,8 +117,8 @@ public class CustomArrays {
         }
         return array;
     }
-    public static int[][] inputTwoDimMatrix(int m, int n, Scanner in){
-        int[][] array = new int[m][n];
+    public static int[][] inputTwoDimMatrix(int rows, int columns, Scanner in){
+        int[][] array = new int[rows][columns];
         printMatrix(array);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
