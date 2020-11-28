@@ -32,18 +32,10 @@ public class OneDimArrTaskFour {
         int[] array;
         switch (choose){
             case 1:
-                array = RandomArrays.oneDimArrayRandomFillingNeg(size);
+                array = CustomArrays.oneDimArrayRandomFillingNeg(size);
                 break;
             case 2:
-                array = new int[size];
-                for (int i = 0; i < size; i++) {
-                    System.out.println("Введите "+(i+1)+"е число массива: ");
-                    while (!in.hasNextInt()) {
-                        System.out.println("Не корректный ввод!");
-                        in.next();
-                    }
-                    array[i]  = in.nextInt();
-                }
+                array = CustomArrays.inputArray(size);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);

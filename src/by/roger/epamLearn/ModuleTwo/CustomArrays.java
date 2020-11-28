@@ -2,7 +2,9 @@ package by.roger.epamLearn.ModuleTwo;
 
 // Класс с методами создания различных числовых массивов.
 
-public class RandomArrays {
+import java.util.Scanner;
+
+public class CustomArrays {
     // Возвращает одномерный массив случайных чисел размерностью size с диапазоном чисел 0 ... 100
     public static int[] oneDimArrayRandomFilling(int size) {
         int[] array = new int[size];
@@ -102,5 +104,32 @@ public class RandomArrays {
             }
         }
     }
-
+    public static int[] inputArray(int size){
+        Scanner in = new Scanner(System.in);
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            System.out.println("Введите "+(i+1)+"й элемент массива: ");
+            while (!in.hasNextInt()) {
+                System.out.println("Не корректный ввод!");
+                in.next();
+            }
+            array[i]  = in.nextInt();
+        }
+        return array;
+    }
+    public static int[][] inputTwoDimMatrix(int m, int n){
+        Scanner in = new Scanner(System.in);
+        int[][] array = new int[m][n];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; i < array[i].length; i++) {
+                System.out.println("Введите ["+(i)+"]["+j+"] элемент матрицы: ");
+                while (!in.hasNextInt()) {
+                    System.out.println("Не корректный ввод!");
+                    in.next();
+                }
+                array[i][j]  = in.nextInt();
+            }
+        }
+        return array;
+    }
 }

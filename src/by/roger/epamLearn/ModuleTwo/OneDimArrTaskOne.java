@@ -1,7 +1,5 @@
 package by.roger.epamLearn.ModuleTwo;
 
-import com.sun.java.swing.plaf.windows.WindowsInternalFrameTitlePane;
-
 import java.util.Scanner;
 
 /*
@@ -34,20 +32,10 @@ public class OneDimArrTaskOne {
         int[] array;
         switch (choose){
             case 1:
-                array = RandomArrays.oneDimArrayRandomFilling(size);
+                array = CustomArrays.oneDimArrayRandomFilling(size);
                 break;
             case 2:
-                array = new int[size];
-                for (int i = 0; i < size; i++) {
-                    do {
-                        System.out.println("Введите "+(i+1)+"е число массива: ");
-                        while (!in.hasNextInt()) {
-                            System.out.println("Не корректный ввод!");
-                            in.next();
-                        }
-                        array[i]  = in.nextInt();
-                    } while (array[i] <= 0);
-                }
+                array = CustomArrays.inputArray(size);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);
