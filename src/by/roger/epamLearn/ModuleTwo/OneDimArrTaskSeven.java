@@ -11,7 +11,7 @@ public class OneDimArrTaskSeven {
     public static void main(String[] args) {
         int choose;
         Scanner in = new Scanner(System.in);
-        System.out.println("Программа вычисляет находит максимальное значение из сумм пар крайних чисел " +
+        System.out.println("Программа находит максимальное значение из сумм пар крайних чисел " +
                 "max(a1 + a2n, a2 + a2n−1 , ... , an + an+1)." +
                 " \nВыберите вариант выполнения программы: 1 - через случайный массив чисел, 2 - массив вводится" +
                 " вручную из консоли.");
