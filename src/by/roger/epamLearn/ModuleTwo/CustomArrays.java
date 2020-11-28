@@ -104,8 +104,8 @@ public class CustomArrays {
             }
         }
     }
-    public static int[] inputArray(int size){
-        Scanner in = new Scanner(System.in);
+    public static int[] inputArray(int size, Scanner in){
+        //Scanner in = new Scanner(System.in);
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
             System.out.println("Введите "+(i+1)+"й элемент массива: ");
@@ -117,11 +117,25 @@ public class CustomArrays {
         }
         return array;
     }
-    public static int[][] inputTwoDimMatrix(int m, int n){
-        Scanner in = new Scanner(System.in);
+    public static int[][] inputTwoDimMatrix(int m, int n, Scanner in){
         int[][] array = new int[m][n];
+        printMatrix(array);
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; i < array[i].length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print("Введите ["+(i)+"]["+j+"] элемент матрицы: ");
+                while (!in.hasNextInt()) {
+                    System.out.println("Не корректный ввод!");
+                    in.next();
+                }
+                array[i][j]  = in.nextInt();
+            }
+        }
+        return array;
+    }
+    public static int[][] inputSquareDimMatrix(int n, Scanner in){
+        int[][] array = new int[n][n];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 System.out.println("Введите ["+(i)+"]["+j+"] элемент матрицы: ");
                 while (!in.hasNextInt()) {
                     System.out.println("Не корректный ввод!");

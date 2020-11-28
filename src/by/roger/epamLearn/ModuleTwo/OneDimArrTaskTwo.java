@@ -35,7 +35,7 @@ public class OneDimArrTaskTwo {
                 array = CustomArrays.oneDimArrayRandomFilling(size);
                 break;
             case 2:
-                array = CustomArrays.inputArray(size);
+                array = CustomArrays.inputArray(size, in);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);
