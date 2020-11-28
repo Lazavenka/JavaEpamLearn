@@ -59,7 +59,7 @@ public class OneDimArrTaskOne {
             System.out.println("Введите K: ");
             while (!in.hasNextInt()) {
                 System.out.println("Не корректный ввод!");
-                in.next(); // this is important!
+                in.next();
             }
             k = in.nextInt();
         } while (k <= 0);

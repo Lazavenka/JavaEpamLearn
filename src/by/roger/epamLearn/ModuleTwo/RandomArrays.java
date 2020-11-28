@@ -11,6 +11,22 @@ public class RandomArrays {
         }
         return array;
     }
+    // Возвращает одномерный массив случайных чисел размерностью size с диапазоном чисел 0 ... border
+    public static int[] oneDimArrayRandomFilling(int size, int border) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = (int) (Math.random() * border);
+        }
+        return array;
+    }
+    // Возвращает одномерный массив случайных чисел размерностью size с диапазоном чисел -100 ... 100
+    public static int[] oneDimArrayRandomFillingNeg(int size) {
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = (int) ((Math.random() -0.5) * 200);
+        }
+        return array;
+    }
 
     public static double[] arrayFibonacci(int size) {
         double[] array = new double[size];
