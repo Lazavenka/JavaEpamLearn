@@ -67,6 +67,15 @@ public class CustomArrays {
         }
         return array;
     }
+    public static int[][] twoDimArrayRndFill(int m, int n, int border) {
+        int[][] array = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = (int) (Math.random() * border)+1;
+            }
+        }
+        return array;
+    }
     //Заполняет матрицу последовательно с 0 до n*n-1
     public static int[][] fillMatrix(int n){
         int[][] array = new int[n][n];
