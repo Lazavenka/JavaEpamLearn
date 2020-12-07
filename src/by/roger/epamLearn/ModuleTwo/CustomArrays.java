@@ -132,6 +132,23 @@ public class CustomArrays {
         }
         return array;
     }
+    public static int[][] inputTwoDimPositiveMatrix(int rows, int columns, Scanner in){
+        int[][] array = new int[rows][columns];
+        printMatrix(array);
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                do {
+                    System.out.print("Введите [" + (i) + "][" + j + "] элемент матрицы: ");
+                    while (!in.hasNextInt()) {
+                        System.out.println("Не корректный ввод!");
+                        in.next();
+                    }
+                    array[i][j] = in.nextInt();
+                }while (array[i][j]<0);
+            }
+        }
+        return array;
+    }
     public static int[][] inputSquareDimMatrix(int n, Scanner in){
         int[][] array = new int[n][n];
         for (int i = 0; i < array.length; i++) {
