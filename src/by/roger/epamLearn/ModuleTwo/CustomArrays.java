@@ -67,11 +67,22 @@ public class CustomArrays {
         }
         return array;
     }
+    // Возвращает двумерный массив случайных чисел int размерностью m*n с диапазоном чисел 1 ... border включительно
     public static int[][] twoDimArrayRndFill(int m, int n, int border) {
         int[][] array = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 array[i][j] = (int) (Math.random() * border)+1;
+            }
+        }
+        return array;
+    }
+    // Возвращает двумерный массив случайных чисел int размерностью m*n с диапазоном чисел -border ... border включительно
+    public static int[][] twoDimArrayRndFillNeg(int m, int n, int border) {
+        int[][] array = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = (int) ((Math.random() - 0.5) * 2 * border);
             }
         }
         return array;
