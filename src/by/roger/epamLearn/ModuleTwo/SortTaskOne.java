@@ -10,12 +10,12 @@ import java.util.Scanner;
  */
 public class SortTaskOne {
     public static void main(String[] args) {
-        int choose;
         Scanner in = new Scanner(System.in);
-        System.out.println("Программа объединяет два массива в один, включая второй массив между k-м и (k+1) - м элементами первого." +
+        System.out.println("Программа объединяет два одномерных массива в один, включая второй массив между k-м и " +
+                "(k+1) - м элементами первого." +
                 " \nВыберите вариант выполнения программы: 1 - через случайные массивы чисел, 2 - массивы вводятся" +
                 " вручную из консоли.");
-        choose = CustomArrays.inputChoose("Выберите вариант выполнения программы: ",2,in);
+        int choose = CustomArrays.inputChoose("Выберите вариант выполнения программы: ",2,in);
         int sizeFirst = CustomArrays.inputArraySize("Введите размерность первого массива: ", in);
         int sizeSecond = CustomArrays.inputArraySize("Введите размерность второго массива: ", in);
         int[] arrayOne;
