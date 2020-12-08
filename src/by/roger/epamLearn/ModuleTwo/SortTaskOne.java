@@ -37,20 +37,24 @@ public class SortTaskOne {
         //k получаем при помощи ввода из консоли, методом который позволяет получить числа 1...num ->
         //индекс массива надо использовать 0 ... arrayOne.length - 1;
         int k = CustomArrays.inputPositiveNum("Введите k: ", arrayOne.length, in);
-        int[] arrayAns = new int[arrayOne.length+ arrayTwo.length];
+        int[] arrayAns = mergeArrays(arrayOne, arrayTwo, k);
+
+        System.out.println(Arrays.toString(arrayAns));
+    }
+    private static int[] mergeArrays(int[] a, int[] b, int k){
+        int[] arrayAns = new int[a.length + b.length];
         for (int i = 0; i < arrayAns.length; i++) {
             if(i<k){
-                arrayAns[i] = arrayOne[i];
+                arrayAns[i] = a[i];
             }else if(i==k){
-                for (int j = i, idxTwo = 0; j < arrayTwo.length+i; j++, idxTwo++) {
-                    arrayAns[j] = arrayTwo[idxTwo];
+                for (int j = i, idxTwo = 0; j < b.length+i; j++, idxTwo++) {
+                    arrayAns[j] = b[idxTwo];
                 }
-                i = i + arrayTwo.length-1;
+                i = i + b.length-1;
             } else {
-                arrayAns[i] = arrayOne[i - arrayTwo.length];
+                arrayAns[i] = a[i - b.length];
             }
         }
-        System.out.println(Arrays.toString(arrayAns));
-
+        return arrayAns;
     }
 }
