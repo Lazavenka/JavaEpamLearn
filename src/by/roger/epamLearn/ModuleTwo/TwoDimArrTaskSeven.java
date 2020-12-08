@@ -11,15 +11,7 @@ public class TwoDimArrTaskSeven {
         Scanner in = new Scanner(System.in);
         System.out.println("Программа строит числовую матрицу по правилу A[I,J] = sin((I^2 - J^2)/N)." +
                 "\nИ подсчитывает количество положительных элементов в ней.");
-        int n;
-        do {
-            System.out.println("Введите порядок матрицы N: ");
-            while (!in.hasNextInt()) {
-                System.out.println("Не корректный ввод!");
-                in.next();
-            }
-            n = in.nextInt();
-        } while (n <= 0);
+        int n = CustomArrays.inputArraySize("Введите порядок матрицы N: ", in);
         double[][] array = new double[n][n];
         int countPos = 0;
         double d;

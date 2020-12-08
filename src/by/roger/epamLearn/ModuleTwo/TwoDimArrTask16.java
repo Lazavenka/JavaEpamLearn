@@ -17,16 +17,7 @@ public class TwoDimArrTask16 {
         System.out.println("Программа строит магический квадрат порядка n. alpha версия программы " +
                 "умеет правильно строить квадрат для n - нечетного." +
                 "\nПрограмма проверяет магический ли квадрат выводя сумму всех строк, столбцов и главных диагоналей.");
-        int n;
-        do {
-            System.out.println("Введите порядок магического квадрата N: ");
-            while (!in.hasNextInt()) {
-                System.out.println("Не корректный ввод!");
-                in.next();
-            }
-            n = in.nextInt();
-        } while (n <= 0);
-
+        int n = CustomArrays.inputArraySize("Введите порядок магического квадрата N: ", in);
         int summ = n*(n*n+1)/2;
         System.out.println("Магическая константа квадрата порядка "+n+": "+summ);
         int[][] array = new int[n][n];

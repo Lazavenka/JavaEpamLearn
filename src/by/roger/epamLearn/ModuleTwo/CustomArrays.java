@@ -5,6 +5,43 @@ package by.roger.epamLearn.ModuleTwo;
 import java.util.Scanner;
 
 public class CustomArrays {
+    public static int inputChoose (String comment, int num, Scanner in){
+        int choose;
+        do {
+            System.out.println(comment);
+            while (!in.hasNextInt()) {
+                System.out.println("Не корректный ввод!");
+                in.next();
+            }
+            choose = in.nextInt();
+        }while(choose<1||choose>num);
+        return choose;
+    }
+    public static int inputPositiveNum (String comment, int num, Scanner in){
+        int choose;
+        do {
+            System.out.println(comment);
+            while (!in.hasNextInt()) {
+                System.out.println("Не корректный ввод!");
+                in.next();
+            }
+            choose = in.nextInt();
+        }while(choose<0||choose>num);
+        return choose;
+    }
+    public static int inputArraySize(String comment, Scanner in){
+        int size;
+        do {
+            System.out.println(comment);
+            while (!in.hasNextInt()) {
+                System.out.println("Не корректный ввод!");
+                in.next();
+            }
+            size = in.nextInt();
+        } while (size <= 0);
+        return size;
+    }
+
     // Возвращает одномерный массив случайных чисел размерностью size с диапазоном чисел 0 ... 100
     public static int[] oneDimArrayRandomFilling(int size) {
         int[] array = new int[size];

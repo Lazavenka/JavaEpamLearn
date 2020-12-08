@@ -8,27 +8,12 @@ import java.util.Scanner;
  */
 public class OneDimArrTaskThree {
     public static void main(String[] args) {
-        int choose;
         Scanner in = new Scanner(System.in);
         System.out.println("Программа подсчитывает количество отрицательных, положительных и нулевых элементов в массиве." +
                 " \nВыберите вариант выполнения программы: 1 - через случайный массив чисел, 2 - массив вводится" +
                 " вручную из консоли.");
-        System.out.println("Выберите вариант выполнения программы: ");
-        while (!in.hasNextInt()) {
-            System.out.println("Не корректный ввод!");
-            in.next();
-        }
-        choose = in.nextInt();
-
-        int size;
-        do {
-            System.out.println("Введите размерность массива: ");
-            while (!in.hasNextInt()) {
-                System.out.println("Не корректный ввод!");
-                in.next();
-            }
-            size = in.nextInt();
-        } while (size <= 0);
+        int choose = CustomArrays.inputChoose("Выберите вариант выполнения программы: ",2,in);
+        int size = CustomArrays.inputArraySize("Введите размерность массива: ", in);
         int[] array;
         switch (choose){
             case 1:
