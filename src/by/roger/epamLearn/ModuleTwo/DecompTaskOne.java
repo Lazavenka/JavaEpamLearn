@@ -10,14 +10,14 @@ public class DecompTaskOne {
     public static void main(String[] args) {
         System.out.println("Программа определяет НОД и НОК двух натуральных чисел. Числа вводятся пользователем в консоль");
         Scanner in = new Scanner(System.in);
-        int a = DecompositionUtils.inputNumber("Ввкдите первое число: ", in);
+        int a = DecompositionUtils.inputNumber("Введите первое число: ", in);
         int b = DecompositionUtils.inputNumber("Введите второе число: ", in);
         int gdc = gcdEvclidus(a, b);
         int lcm = lcm(a, b, gdc);
         System.out.printf("НОД чисел %d и %d равен %d", a, b, gdc);
         System.out.printf("\nНОК чисел %d и %d равен %d", a, b, lcm);
     }
-    private static int gcdEvclidus(int a, int b){
+    public static int gcdEvclidus(int a, int b){
         while (a - b != 0){
             if(a > b){
                 a = a - b;
