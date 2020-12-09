@@ -39,19 +39,43 @@ public class SortTaskSeven {
         }
         System.out.println(Arrays.toString(arrayOne));
         System.out.println(Arrays.toString(arrayTwo));
-        int[] positions = findPositions(arrayOne,arrayTwo);
-        System.out.println(Arrays.toString(positions));
-
-    }
-    public static int[] findPositions(int[] a, int[] b){
-        int[] ans = new int[b.length];
-        for (int i = 0; i < b.length; i++) {
-            for (int j = 0; j < a.length-1; j++) {
-                if (b[i]<a[j+1]&&b[i]>=a[j]){
-                    ans[i] = j+2;
+        int[] newArray = arrayOne;
+        for (int k : arrayTwo) {
+            int[] tempArray = new int[newArray.length + 1];
+            int position = binarySearch(newArray, k);
+            for (int j = 0; j < tempArray.length; j++) {
+                if (j < position) {
+                    tempArray[j] = newArray[j];
+                } else if (j == position) {
+                    tempArray[j] = k;
+                } else {
+                    tempArray[j] = newArray[j - 1];
                 }
             }
+            newArray = tempArray;
+            System.out.printf("Элемент %d был вставлен в позицию %d", k, position);
+            System.out.println("\nНовый массив:");
+            System.out.println(Arrays.toString(newArray));
         }
-        return ans;
+
+
+    }
+    private static int binarySearch(int[] array, int number){
+        int firstIndex = 0;
+        int lastIndex = array.length-1;
+        int midIndex = 0;
+        while (firstIndex<=lastIndex){
+            midIndex = (firstIndex + lastIndex) / 2;
+            if (array[midIndex]==number){
+                return midIndex;
+            }else if (array[midIndex]<number){
+                firstIndex = midIndex + 1;
+            }else if (array[midIndex] > number && midIndex != 0 && !(array[midIndex - 1] < number)){
+                lastIndex = midIndex - 1;
+            }else{
+                break;
+            }
+        }
+        return midIndex;
     }
 }
