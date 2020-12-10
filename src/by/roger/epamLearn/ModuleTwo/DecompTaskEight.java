@@ -32,7 +32,7 @@ public class DecompTaskEight {
         System.out.println(Arrays.toString(array));
         ArrayList<Integer> summs = findSumms(array);
         System.out.println("Суммы трех последовательно расположенных элементов массива\n" +
-                "----------------------------------");
+                "------------------------------");
         System.out.println(Arrays.toString(summs.toArray()));
     }
     private static int summThree(int[] array, int i){
