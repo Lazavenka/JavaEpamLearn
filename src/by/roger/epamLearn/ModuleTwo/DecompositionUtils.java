@@ -15,6 +15,18 @@ public class DecompositionUtils {
         }while(number<=0);
         return number;
     }
+    public static double inputNumberDouble(String comment, Scanner in){
+        double number;
+        do {
+            System.out.println(comment);
+            while (!in.hasNextDouble()) {
+                System.out.println("Не корректный ввод!");
+                in.next();
+            }
+            number = in.nextDouble();
+        }while(number<=0);
+        return number;
+    }
     public static int inputNumberNeg(String comment, Scanner in){
         int number;
         System.out.println(comment);
