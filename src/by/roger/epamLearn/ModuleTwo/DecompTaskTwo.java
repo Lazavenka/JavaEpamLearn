@@ -16,8 +16,18 @@ public class DecompTaskTwo {
         System.out.println(Arrays.toString(numbers));
         int gcd = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
-            gcd = (DecompTaskOne.gcdEvclidus(gcd, numbers[i]));
+            gcd = gcdEvclidus(gcd, numbers[i]);
         }
         System.out.printf("НОД чисел введенных пользователем равен %d", gcd);
+    }
+    private static int gcdEvclidus(int a, int b){
+        while (a - b != 0){
+            if(a > b){
+                a = a - b;
+            }else{
+                b = b - a;
+            }
+        }
+        return a;
     }
 }
