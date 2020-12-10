@@ -26,7 +26,7 @@ public class DecompTaskFive {
             default:
                 throw new IllegalStateException("Unexpected value: " + choose);
         }
-        System.out.println("Массив чисел до замены:");
+        System.out.println("Массив чисел:\n--------------------------------");
         System.out.println(Arrays.toString(array));
         int secondMax = findSecondMax(array);
         if (secondMax!= -1){
