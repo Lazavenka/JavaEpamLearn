@@ -15,4 +15,14 @@ public class DecompositionUtils {
         }while(number<=0);
         return number;
     }
+    public static int inputNumberNeg(String comment, Scanner in){
+        int number;
+        System.out.println(comment);
+        while (!in.hasNextInt()) {
+            System.out.println("Не корректный ввод!");
+            in.next();
+        }
+        number = in.nextInt();
+        return number;
+    }
 }
