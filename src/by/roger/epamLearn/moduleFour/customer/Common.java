@@ -1,4 +1,4 @@
-package by.roger.epamLearn.moduleFour;
+package by.roger.epamLearn.moduleFour.customer;
 
 import java.util.Scanner;
 

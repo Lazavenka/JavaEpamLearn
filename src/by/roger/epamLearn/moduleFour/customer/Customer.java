@@ -1,7 +1,6 @@
-package by.roger.epamLearn.moduleFour;
+package by.roger.epamLearn.moduleFour.customer;
 
 import java.io.Serializable;
-import java.util.Formatter;
 import java.util.Objects;
 import java.util.Scanner;
 
