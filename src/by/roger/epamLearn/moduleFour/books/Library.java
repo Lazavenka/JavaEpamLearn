@@ -62,7 +62,7 @@ public class Library implements Serializable, Comparator<Book> {
     public void printAfterYear(int year){
         boolean flag = false;
         for (Book book : books) {
-            if (book.getYear()>year) {
+            if (book.getYear()>=year) {
                 System.out.println(book);
                 flag = true;
             }
