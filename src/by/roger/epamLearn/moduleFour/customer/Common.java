@@ -35,4 +35,5 @@ public class Common {
         }while(number<0||number>border);
         return number;
     }
+
 }

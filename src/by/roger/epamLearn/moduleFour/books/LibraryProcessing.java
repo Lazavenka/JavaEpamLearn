@@ -26,6 +26,7 @@ public class LibraryProcessing {
             }
         }
     }
+
     private static void editLibrary(Scanner in, Library library){
         while(true) {
             System.out.print(

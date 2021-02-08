@@ -71,6 +71,7 @@ public class Library implements Serializable, Comparator<Book> {
             System.out.println("Книг изданных после "+year+"-го года не найдено.");
         }
     }
+
     private boolean findEntry(String name, String... array){
         for (String s:array) {
             if (s.toLowerCase().contains(name.toLowerCase())){
